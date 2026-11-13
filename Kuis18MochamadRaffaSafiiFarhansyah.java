@@ -9,6 +9,10 @@ public class Kuis18MochamadRaffaSafiiFarhansyah {
         int totalUsia = 0;
 
         for (int i = 0; i < n; i++) {
+            if ( i < 1 || i > 80 ) {
+                System.out.println("Input tidak valid, ulangi");
+                i--;
+            }
             System.out.print("Usia pengunjung ke-" + (i + 1) + ": ");
             int usia = sc.nextInt();
 
@@ -26,7 +30,10 @@ public class Kuis18MochamadRaffaSafiiFarhansyah {
 
         double rataUsia = (double) totalUsia / n;
         System.out.println("=== REKAP HARIAN ===");
+        System.out.println("Jumlah pengunjung anak: " + (n - (totalUsia / n)));
         System.out.println("Total pendapatan : Rp " + totalPendapatan);
         System.out.println("Rata-rata usia   : " + rataUsia + " tahun");
+
+        sc.close();
     }
 }
